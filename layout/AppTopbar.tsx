@@ -6,6 +6,7 @@ import { Button } from 'primereact/button';
 import Link from 'next/link';
 import { MegaMenu } from 'primereact/megamenu';
 import { Menubar } from 'primereact/menubar';
+import { Menu } from 'primereact/menu';
 import { StyleClass } from 'primereact/styleclass';
 import { useRouter } from 'next/navigation';
 import { classNames } from 'primereact/utils';
@@ -350,35 +351,35 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
                 ]
             ]
         },
-        {
-            label: 'UTILITIES',
-            icon: 'pi pi-fw pi-image',
-            command: () => router.push('/utilities/icons')
+        // {
+        //     label: 'TopLevl Link',
+        //     icon: 'pi pi-fw pi-image',
+        //     command: () => router.push('/utilities/icons')
             
-        },
-        {
-            label: 'UTILITIES',
-            items: [
-                [
-                    {
+        // },
+        // {
+        //     label: 'UTILITIES',
+        //     items: [
+        //         [
+        //             {
                         
-                        items: [
-                            {
-                                label: 'PrimeIcons',
-                                icon: 'pi pi-fw pi-prime',
-                                command: () => router.push('/utilities/icons')
-                            },
-                            {
-                                label: 'PrimeFlex',
-                                icon: 'pi pi-fw pi-directions',
-                                url: 'https://www.primeflex.org',
-                                target: '_blank'
-                            }
-                        ]
-                    }
-                ]
-            ]
-        }
+        //                 items: [
+        //                     {
+        //                         label: 'PrimeIcons',
+        //                         icon: 'pi pi-fw pi-prime',
+        //                         command: () => router.push('/utilities/icons')
+        //                     },
+        //                     {
+        //                         label: 'PrimeFlex',
+        //                         icon: 'pi pi-fw pi-directions',
+        //                         url: 'https://www.primeflex.org',
+        //                         target: '_blank'
+        //                     }
+        //                 ]
+        //             }
+        //         ]
+        //     ]
+        // }
     ];
 
 
@@ -452,6 +453,27 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
             
         }
     ];
+
+
+    const startClass = classNames('layout-megamenu-start');
+
+    // const start = (
+        const start = (
+        // <Link href="/apps/blog/detail" className ={startClass}>Dashboard</Link>
+        <Link href="/apps/blog/detail" style ={{color:`white`, fontSize: `1rem`}}>Dashboard</Link>
+    );
+
+    
+    // const startitems = [
+    //     {label: 'New', icon: 'pi pi-fw pi-plus'},
+    //     {label: 'Delete', icon: 'pi pi-fw pi-trash'}
+    // ];
+    // const startmenu = (     
+        
+    //     <Menu model={startitems} />
+    // );
+    
+
     return (
         <div className="layout-topbar">
             <div className="layout-topbar-start">
@@ -464,9 +486,9 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
                             fill="var(--topbar-item-text-color)"
                         />
                         <text x="60" y="24"   
-                            font-size="1.6rem" 
-                            font-weight = "800"
-                            letter-spacing= "0.2rem"
+                            fontSize="1.6rem" 
+                            fontWeight = "800"
+                            letterSpacing= "0.2rem"
                             className={inter.className}
                             fill="var(--topbar-item-text-color)">GBook</text>
                     </svg>
@@ -491,7 +513,7 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
 
             <div className="layout-topbar-end">
                 <div className="layout-topbar-actions-start">
-                    <MegaMenu model={model} className="layout-megamenu" />
+                    <MegaMenu model={model} start={start} className="layout-megamenu" />
                     {/* <Menubar model={items} className="layout-menubar"/> */}
                 </div>
                 <div className="layout-topbar-actions-end">

@@ -1,6 +1,6 @@
 "# prime"
 
-next app wit primereact ultima
+next app with primereact ultima
 
 
 ## next app creation
@@ -23,3 +23,10 @@ next app wit primereact ultima
   demo
   layout
   ...
+
+
+## ulima project customize
+
+  1. project name, logo
+  2. favicon
+  3.
