@@ -13,7 +13,8 @@ export const generateStaticParams = async () =>
 // }
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
+  // console.log("sluggggggggggggggggggg : " + params.slug);
+  const post = allPosts.find((post) => post.url === params.slug);
   if (!post) {
     return <></>;
   }
