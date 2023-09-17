@@ -2,6 +2,9 @@ import React, { ReactElement, Dispatch, SetStateAction, HTMLAttributeAnchorTarge
 import { NextPage } from 'next';
 import type { Demo } from './demo';
 import { Toast } from 'primereact/toast';
+import { MenuItem } from 'primereact/menuitem';
+
+
 
 /* Next & Layout Types */
 type Page<P = {}> = NextPage<P> & {
@@ -132,6 +135,23 @@ export interface TaskContextProps {
     closeDialog: () => void;
 }
 
+
+/* contentConfigProps  Types */
+export interface ContentConfigProps {
+    menu: MenuModel[];
+    rightMenu: tocProps[];
+    pageUrl : string | undefined;
+    children: ReactNode;
+}
+
+export interface AppMenuProps {
+    menus: MenuModel[];
+   
+    // children: ReactNode;
+}
+
+
+
 /* AppConfig Types */
 export interface AppConfigProps {
     minimal?: boolean;
@@ -163,7 +183,7 @@ export interface MenuModel {
     to?: string;
     url?: string;
     target?: HTMLAttributeAnchorTarget;
-    seperator?: boolean;
+    separator?: boolean;
     badgeClassName?: string;
     badgeStyle?: CSSProperties;
     className?: string;

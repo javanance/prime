@@ -22,6 +22,7 @@ import {
     AppTopbarRef,
     MenuModelItem,
     AppMenuItemProps,
+    AppMenuItem,
     UseSubmenuOverlayPositionProps
 } from './layout';
 import type { Demo, LayoutType, SortOrderType, CustomEvent, ChartDataState, ChartOptionsState, AppMailSidebarItem, AppMailReplyProps, AppMailProps, MailKeys } from './demo';
@@ -30,6 +31,11 @@ type ChildContainerProps = {
     children: ReactNode;
 };
 
+type tocProps ={
+    level: string;
+    text: string; 
+    slug: string;
+}
 export type {
     Page,
     AppBreadcrumbProps,
@@ -61,5 +67,6 @@ export type {
     ChartOptionsState,
     AppMailSidebarItem,
     AppMailReplyProps,
+    AppMenuItem,
     AppMailProps
 };
