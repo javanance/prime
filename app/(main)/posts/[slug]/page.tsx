@@ -16,7 +16,11 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   // console.log("sluggggggggggggggggggg : " + params.slug);
   const post = allPosts.find((post) => post.url === params.slug);
   if (!post) {
-    return <></>;
+    return (
+      <>
+        <div> {params.slug}</div>
+      </>
+    );
   }
   const Content = getMDXComponent(post?.body.code);
 
