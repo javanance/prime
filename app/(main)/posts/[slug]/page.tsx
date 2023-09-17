@@ -5,7 +5,8 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
-// export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post.url }))
+// export const generateStaticParams = async () =>
+//   allPosts.map((post) => ({ slug: post.url }));
 
 // export const generateMetadata = ({ params } : { params: { slug: string }}) => {
 //   const post = allPosts.find((post) => post.url === params.slug)
@@ -14,6 +15,13 @@ export const generateStaticParams = async () =>
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
   // console.log("sluggggggggggggggggggg : " + params.slug);
+  // generateStaticParams.forEach((element) => {
+  // });
+
+  generateStaticParams().then((result) => {
+    console.log("AAAAAAAAAAAAAAAAAAA" + result[0].toString()); // 24
+  });
+
   const post = allPosts.find((post) => post.url === params.slug);
   if (!post) {
     return (
