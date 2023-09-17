@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "@/.contentlayer/generated";
@@ -13,7 +13,8 @@ function PostCard(post: Post) {
         <Link
           href={post._raw.flattenedPath}
           className="text-blue-700 hover:text-blue-900"
-          legacyBehavior>
+          legacyBehavior
+        >
           {post.title}
         </Link>
       </h2>
@@ -38,6 +39,13 @@ export default function Home() {
 
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
+      ))}
+
+      {posts.map((post, idx) => (
+        <div>
+          <p> {post.url}</p>
+          <p> {post._raw.flattenedPath}</p>
+        </div>
       ))}
     </div>
   );

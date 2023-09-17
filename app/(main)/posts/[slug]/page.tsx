@@ -19,6 +19,11 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     return (
       <>
         <div> {params.slug}</div>
+        <ul>
+          {allPosts.map((post) => (
+            <li key={post.url}>{post.url}</li>
+          ))}
+        </ul>
       </>
     );
   }
