@@ -4,7 +4,8 @@ const { withContentlayer } = require("next-contentlayer");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/prime",
+  // for github pages
+  // basePath: "/prime",
   images: {
     unoptimized: true,
   },
