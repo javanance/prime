@@ -6,10 +6,10 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 // export async function generateStaticParams() {
 //    return [{ slug: 'change-me' }, { slug: 'click-me' }]
 // }
-export const generateStaticParams = async () => {
-  //  allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
-  return allPosts.map((post) => ({ slug: post.url }));
-};
+// export const generateStaticParams = async () => {
+//   //  return allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
+//   return allPosts.map((post) => ({ slug: post.url }));
+// };
 
 // export const generateStaticParams = async () =>
 // export const generateMetadata = ({ params } : { params: { slug: string }}) => {
@@ -18,14 +18,15 @@ export const generateStaticParams = async () => {
 // }
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
-  // console.log("sluggggggggggggggggggg : " + params.slug);
+  console.log("sluggggggggggggggggggg : " + params.slug);
   // generateStaticParams.forEach((element) => {
   // });
 
-  generateStaticParams().then((result) => {
-    console.log("AAAAAAAAAAAAAAAAAAA" + result[0].toString()); // 24
-  });
+  // generateStaticParams().then((result) => {
+  //   console.log("AAAAAAAAAAAAAAAAAAA" + result[0].slug); // 24
+  // });
 
+  // const post = allPosts.find((post) => post._raw.flattenedPath == params.slug);
   const post = allPosts.find((post) => post.url == params.slug);
   if (!post) {
     return (

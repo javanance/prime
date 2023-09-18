@@ -3,10 +3,16 @@ import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "@/.contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
+import useSWR from "swr";
 
 function PostCard(post: Post) {
   const Content = getMDXComponent(post.body.code);
 
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data } = useSWR("/public/data/test.json", fetcher);
+
+  console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+  console.log(data);
   return (
     <div className="mb-8">
       <h2 className="text-xl">
