@@ -12,7 +12,6 @@ export const generateStaticParams = async () => {
 };
 
 // export const generateStaticParams = async () =>
-
 // export const generateMetadata = ({ params } : { params: { slug: string }}) => {
 //   const post = allPosts.find((post) => post.url === params.slug)
 //   return { title: post?.title }
