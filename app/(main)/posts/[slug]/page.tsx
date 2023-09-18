@@ -3,14 +3,14 @@ import { format, parseISO } from "date-fns";
 import { allPosts } from "@/.contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 
-export async function generateStaticParams() {
-   return [{ slug: 'change-me' }, { slug: 'click-me' }]
-}
-// export const generateStaticParams = async () =>
-   // allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
-// export const generateStaticParams = async () =>
-  // allPosts.map((post) => ({ slug: post.url }));
- 
+// export async function generateStaticParams() {
+//    return [{ slug: 'change-me' }, { slug: 'click-me' }]
+// }
+export const generateStaticParams = async () =>
+  //  allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
+  // export const generateStaticParams = async () =>
+  allPosts.map((post) => ({ slug: post.url }));
+
 // export const generateMetadata = ({ params } : { params: { slug: string }}) => {
 //   const post = allPosts.find((post) => post.url === params.slug)
 //   return { title: post?.title }
