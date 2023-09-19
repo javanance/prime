@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     ttl: 604800,
   },
   icons: {
-    icon: "/faviconG.ico",
+    icon: "/favicon.ico",
   },
 };
 
